@@ -1,10 +1,10 @@
 function buttonClicked(argButtonName) {  //gracz klika wybrany guzik
-  let playerMove = argButtonName
+  const playerMove = argButtonName
   console.log('ruch gracza to: ', {playerMove});
   clearMessages();
   console.log({playerMove}, ' został kliknięty');
 
-  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
   console.log('wylosowana liczba to: ', {randomNumber});  //liczy cyfrę dla komputera
   
   const computerMove = getMoveName(randomNumber) 
@@ -21,7 +21,7 @@ function buttonClicked(argButtonName) {  //gracz klika wybrany guzik
   console.log('ruch komputera to: ', {computerMove});
 
   
-  displayResult(playerMove, computerMove);
+  displayResult(playerMove, computerMove)  //pokazuje wynik rozgrywki
     function displayResult(argPlayerMove, argComputerMove) {
       console.log('wywołano funkcję displayResults z argumentami: ', {argPlayerMove}, ', ', {argComputerMove});
       if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
@@ -38,6 +38,7 @@ function buttonClicked(argButtonName) {  //gracz klika wybrany guzik
       printMessage('Komputer zagrał ' + argComputerMove + ' , a gracz zagrał ' + argPlayerMove);
     } 
 }
+
 
 const buttonRock = document.getElementById('button-rock');
 buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
