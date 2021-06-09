@@ -1,4 +1,7 @@
+
 function buttonClicked(argButtonName) {  //gracz klika wybrany guzik
+  debugger;
+
   const playerMove = argButtonName
   console.log('ruch gracza to: ', {playerMove});
   clearMessages();
@@ -21,8 +24,9 @@ function buttonClicked(argButtonName) {  //gracz klika wybrany guzik
   console.log('ruch komputera to: ', {computerMove});
 
   
-  displayResult(playerMove, computerMove)  //pokazuje wynik rozgrywki
+    //pokazuje wynik rozgrywki
     function displayResult(argPlayerMove, argComputerMove) {
+
       console.log('wywołano funkcję displayResults z argumentami: ', {argPlayerMove}, ', ', {argComputerMove});
       if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
         printMessage('Wygrywasz!');
@@ -37,6 +41,7 @@ function buttonClicked(argButtonName) {  //gracz klika wybrany guzik
       }
       printMessage('Komputer zagrał ' + argComputerMove + ' , a gracz zagrał ' + argPlayerMove);
     } 
+    displayResult(playerMove, computerMove)
 }
 
 
